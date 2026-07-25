@@ -1,5 +1,5 @@
 #include "Bank.h"
-
+#include <iostream>
 
 bool Bank::createAccount(const std::string& ownerName, double initialBalance){
     if(initialBalance < 0 ) return false;
@@ -14,4 +14,12 @@ Account* Bank::findAccount(int accountNumber){
         return &account;
     }
     return nullptr;
+}
+
+void Bank::showAccounts() const{
+    for(const Account& account : accounts){
+        std::cout<<account.getAccountNumber()<<"\t"
+                 <<account.getOwnerName()<<"\t"
+                 <<account.getBalance()<<std::endl;   
+    }
 }

@@ -2,30 +2,53 @@
 #include <iostream>
 
 #include "Bank.h"
-
+void showInfo(){
+    std::cout<<"\n===== Bank-System =====\n"<<std::endl;
+    std::cout<<"1. Creat Account\n"<<std::endl;
+    std::cout<<"2. Show All accounts\n"<<std::endl;
+    std::cout<<"3. Show Balance\n"<<std::endl;
+    std::cout<<"4. Deposite\n"<<std::endl;
+    std::cout<<"5. Withdraw\n"<<std::endl;
+    std::cout<<"0. Exit\n"<<std::endl;
+}
 int main(){
-  /*  Account account("Parsa" , 1000);
-    std::cout<<"your Balance is: "<<account.getBalance()<<std::endl;
-    if(account.deposit(2000)){
-        std::cout<<"deposite Successfully done."<<std::endl;
-    }
-    else std::cout<<"ERROR."<<std::endl;
-    std::cout<<"Your new balance is: "<<account.getBalance()<<std::endl;
-    if(account.withdraw(200)){
-        std::cout<<"withdraw Successfully done."<<std::endl;
-    }
-    else std::cout<<"ERROR."<<std::endl;
-    std::cout<<"Your new balance is: "<<account.getBalance()<<std::endl;
-*/
+    int choice;
     Bank bank;
-    bank.createAccount("Parsa",1000);
-    Account* account = bank.findAccount(1001);
-    if(account){
-        account->deposit(200);
-        std::cout<<"your balance is: "<<account->getBalance()<<std::endl;
-    }
-    else{
-        std::cout<<"Account not found!"<<std::endl;
+    bool running = true;
+    while(running){
+        showInfo();
+        std::cout<<"Enter your choice: ";
+        std::cin>>choice;
+        switch (choice)
+        {
+        case 1:
+            std::string name;
+            double amount;
+            std::cout<<"Enter your name: ";
+            std::cin>>name;
+            std::cout<<"Enter your amount: ";
+            std::cin>>amount; 
+            if(bank.createAccount(name,amount)){
+                std::cout<<"Your Account created successfuly"<<std::endl;
+            }
+            
+            break;
+        case 2:
+
+            break;
+        case 3:
+
+            break;
+        case 4:
+
+            break;
+        case 0:
+            running = false;
+            break;
+        default:
+            std::cout<<"You Enter a Wrong valid of choice.\ntry again..."<<std::endl;
+            break;
+        }
     }
 
     return 0;

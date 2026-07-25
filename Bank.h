@@ -13,7 +13,7 @@ class Bank{
 
         Account* findAccount(int accountNumber);
 
-
+        showAccounts() const;
 };
 
 
