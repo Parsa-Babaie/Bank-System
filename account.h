@@ -13,6 +13,10 @@ class Account{
 
     public:
         Account(const std::string& newOwnerName , double newBalance);
+
+        Account(const std::string& newOwnerName, double newBalance, int newAccountNumber);
+
+        static void setNextAccountNumber(int accountNumber);
         
         void setOwnerName(const std::string& newOwnerName);
         

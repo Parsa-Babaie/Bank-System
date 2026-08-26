@@ -8,12 +8,31 @@
 class Bank{
     private:
         std::vector<Account> accounts;
-    public:
-        bool createAccount(const std::string& ownerName, double initialBalance);
-
         Account* findAccount(int accountNumber);
 
-        showAccounts() const;
+        bool saveToFile(const std::string& nameFile);
+
+        bool loadFromFile(const std::string& nameFile);
+
+        const std::string fileName = "accounts.txt";
+
+    public:
+
+        Bank();
+        
+        ~Bank();
+
+        bool createAccount(const std::string& ownerName, double initialBalance);
+
+        void showAccounts() const;
+
+        bool transferMoney(int fromAccountNumber , int toAccountNumber , double amount);
+
+        bool deposit(int accountNumber, double amount);
+
+        bool withdraw(int accountNumber, double amount);
+
+        bool getBalance(int accountNumber, double& balance);
 };
 
 

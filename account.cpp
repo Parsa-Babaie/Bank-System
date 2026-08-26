@@ -8,6 +8,15 @@ Account::Account(const std::string& newOwnerName, double newBalance)
              accountNumber(nextAccountNumber++),
              balance(newBalance){}
 
+Account::Account(const std::string& newOwnerName, double newBalance, int newAccountNumber)
+            :ownerName(newOwnerName),
+             accountNumber(newAccountNumber),
+             balance(newBalance){}
+
+void Account::setNextAccountNumber(int accountNumber){
+    nextAccountNumber = accountNumber + 1; 
+}             
+
 std::string Account::getOwnerName() const{
     return ownerName;
 }
@@ -35,4 +44,3 @@ bool Account::withdraw(double amount){
 int Account::getAccountNumber() const{
     return accountNumber;
 }
-
