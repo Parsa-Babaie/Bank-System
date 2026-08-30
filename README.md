@@ -12,10 +12,10 @@ A console-based bank management system written in C++ using OOP principles.
 - Input validation
 
 ## How to build
-\`\`\`bash
+```bash
 g++ main.cpp Bank.cpp account.cpp -o bank
 ./bank
-\`\`\`
+```
 
 ## Tech
 C++, OOP (classes, encapsulation), file I/O
